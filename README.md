@@ -27,5 +27,12 @@ terraform apply
 
 ## Configuration
 
+Open main.tf and configure:
+* machine_type
+* sql_server_image
+* attached_disk_size
 
+## TODO
+
+* Add Ansible for configuration (format disks, configure SQL Server)
 

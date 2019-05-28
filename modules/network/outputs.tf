@@ -4,6 +4,11 @@ output "name_prefix" {
   value       = "${var.network_prefix}"
 }
 
+output "network_name" {
+  description = "Network name"
+  value       = "${google_compute_network.network.name}"
+}
+
 # VPC CIDR Range
 output "network_cidr_range" {
   description = "Network CIDR Range"

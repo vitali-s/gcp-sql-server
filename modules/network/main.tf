@@ -29,3 +29,13 @@ resource "google_compute_subnetwork" "subnet-c" {
   ip_cidr_range = "${cidrsubnet(var.network_cidr_range, 12, 3)}"
   network       = "${google_compute_network.network.self_link}"
 }
+
+resource "google_compute_firewall" "allow-rdp" {
+  name    = "allow-rdp"
+  network = "${google_compute_network.network.self_link}"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["3389"]
+  }
+}
